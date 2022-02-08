@@ -17,9 +17,17 @@
 <body>
     <div id="box"></div>
     <script>
-        //問題①：idで要素を取得して、背景色を赤色に変更する処理を記述してください。
-        let box = document.getElementById("box");
-        box.style.backgroundColor = "red";
+        //問題①：idで要素を取得して、背景色を赤色に変更する処理を記述してください。     
+        document.onclick = changeColor;
+        function changeColor(){
+            let box = document.getElementById("box");
+            let color=window.getComputedStyle(box, null).getPropertyValue('background-color');
+            if (color === "rgb(0, 0, 255)") {
+                box.style.backgroundColor = "red";
+            } else if (color === "rgb(255, 0, 0)") {
+                box.style.backgroundColor = "blue";
+            }
+        }
     </script>
 </body>
 
